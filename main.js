@@ -1,8 +1,8 @@
 // Update this section with your ServiceNow credentials
 const options = {
     url: 'https://dev110460.service-now.com',
-    username: 'admin',
-    password: 'Lumen@123'
+  username: 'admin',
+  password: 'Lumen@123',
   serviceNowTable: 'change_request'
 };
 // Import built-in Node.js package path.
