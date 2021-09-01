@@ -249,7 +249,6 @@ healthcheck(callback) {
      * Note how the object was instantiated in the constructor().
      * post() takes a callback function.
      */
-    // console.log('data',connector);
       let returnData = null;
     let returnTicketdataObject = null;
     this.connector.post( (data, error) => {
