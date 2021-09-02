@@ -22,9 +22,9 @@
         },
         "password": {
           "type": "string",
-          "default": "glfkP4KOU9Zu",
+          "default": "Lumen@123",
           "examples": [
-            "glfkP4KOU9Zu"
+            "Lumen@123"
           ]
         }
       },

@@ -14,9 +14,7 @@ const request = require('request');
 // We'll use this regular expression to verify REST API's HTTP response status code.
 const validResponseRegex = /(2\d\d)/;
 
-// Use JSDoc to create a JSDoc data type for an IAP callback.
-// Call the new type iapCallback.
-// Notice iapCallback is a data-first callback.
+
 /**
  * @callback iapCallback
  * @description A [callback function]{@link

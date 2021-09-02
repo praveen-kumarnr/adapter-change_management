@@ -1,21 +1,11 @@
 // Update this constant with your ServiceNow credentials
+// Update this section with your ServiceNow credentials
 const options = {
-    url: 'https://dev110460.service-now.com',
-    username: 'admin',
-    password: 'Lumen@123'
-};
-/**
- * Import the Node.js request package.
- * See https://www.npmjs.com/package/request
- */
-const request = require('request');
-
-
-// We'll use this regular expression to verify REST API's HTTP response status code.
-const validResponseRegex = /(2\d\d)/;
-
-
-// Import built-in Node.js package path.
+    url: ' https://dev110460.service-now.com/',
+  username: 'admin',
+  password: 'Lumen@123',
+  serviceNowTable: 'change_request'
+};// Import built-in Node.js package path.
 const path = require('path');
 
 /**
@@ -42,14 +32,13 @@ function mainOnObject() {
     }
     console.log(`\nResponse returned from GET request:\n${JSON.stringify(data)}`)
   });
-  
-  connector.post({ serviceNowTable: 'change_request' }, (data, error) => {
+  connector.post((data, error) => {
     if (error) {
       console.error(`\nError returned from POST request:\n${JSON.stringify(error)}`);
     }
     console.log(`\nResponse returned from POST request:\n${JSON.stringify(data)}`)
   });
-  
+
 }
 
 // Call mainOnObject to run it.
