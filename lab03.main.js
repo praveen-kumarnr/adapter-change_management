@@ -1,8 +1,9 @@
 // Update this constant with your ServiceNow credentials
 const options = {
-    url: 'https://dev110460.service-now.com',
-    username: 'admin',
-    password: 'Lumen@123'
+   url: ' https://dev110460.service-now.com',
+  username: 'admin',
+  password: 'Lumen@123',
+  serviceNowTable: 'change_request'
 };
 
 /**
@@ -11,9 +12,9 @@ const options = {
  */
 const request = require('request');
 
+
 // We'll use this regular expression to verify REST API's HTTP response status code.
 const validResponseRegex = /(2\d\d)/;
-
 
 /**
  * @callback iapCallback
@@ -63,6 +64,7 @@ function isHibernating(response) {
   && response.body.includes('<html>')
   && response.statusCode === 200;
 }
+
 
 /**
  * @function processRequestResults

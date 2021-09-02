@@ -2,11 +2,9 @@
 const options = {
     url: 'https://dev110460.service-now.com',
     username: 'admin',
-    password: 'Lumen@123'
+    password: 'Lumen@123',
+    serviceNowTable: 'change_request'
 };
-
-
-
 
 /**
  * Import the Node.js request package.
@@ -99,8 +97,25 @@ function get(serviceNowTable, callback) {
 }
 
 /**
+ * This is a [JSDoc comment]{@link http://usejsdoc.org/tags-description.html}.
+ * See http://usejsdoc.org/tags-description.html.
+ *
+ * @callback iapCallback
+ * @description A [callback function]{@link
+ *   https://developer.mozilla.org/en-US/docs/Glossary/Callback_function}
+ *   is a function passed into another function as an argument, which is
+ *   then invoked inside the outer function to complete some kind of
+ *   routine or action.
+ *
+ * @param {*} responseData - When no errors are caught, return data as a
+ *   single argument to callback function.
+ * @param {error} [errorMessage] - If an error is caught, return error
+ *   message in optional second argument to callback function.
+ */
+
+/**
  * @function post
- * @description Call the ServiceNow POST API..
+ * @description Call the ServiceNow POST API.
  *
  * @param {string} serviceNowTable - The table target of the ServiceNow table API.
  * @param {iapCallback} callback - Callback a function.
@@ -119,7 +134,7 @@ function post(serviceNowTable, callback) {
   // that holds the HTTP request method, credentials, and the API's URL.
   // Some properties are hardcoded, like the method and part of the URI.
   // Some properties are read from global const options.
-  // Some properties are passed into function post() through parameters.
+  // Some properties are passed into function get() through parameters.
   const requestOptions = {
     method: 'POST',
     auth: {
@@ -157,7 +172,6 @@ function post(serviceNowTable, callback) {
 
 }
 
-
 /*
  * This section is used to test your project.
  * We will test both get() and post() functions.
@@ -178,5 +192,6 @@ function main() {
     console.log(`\nResponse returned from POST request:\n${JSON.stringify(data)}`)
   });
 }
+
 // Call main to run it.
 main();
